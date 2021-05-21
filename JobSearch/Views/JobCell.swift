@@ -30,4 +30,5 @@ class JobCell: UITableViewCell {
     @IBAction func applyPressed(_ sender: UIButton) {
         buttonAction?(self)
     }
+    
 }

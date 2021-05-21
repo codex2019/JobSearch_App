@@ -10,6 +10,7 @@ import UIKit
 class SearchViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var searchTextField: UITextField!
+    @IBOutlet weak var logTextField: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +26,7 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
         if let title = searchTextField.text {
             let resultVC = ResultsViewController()
             resultVC.jobTitle = title
+            resultVC.fromView = "searchView"
         }
         searchTextField.text = ""
     }

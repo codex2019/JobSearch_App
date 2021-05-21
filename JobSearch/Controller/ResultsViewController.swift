@@ -12,12 +12,14 @@ class ResultsViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     var jobsManager = JobsManager()
     var jobTitle = ""
+    var location = ""
     var applyUrl = ""
     var jobs = [JobData]()
+    var fromView = ""
     
     override func viewDidLoad() {
         jobsManager.delegate = self
-        jobsManager.fetchJobs(titleName: jobTitle)
+        jobsManager.fetchJobs(titleName: jobTitle, viewName: fromView)
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.register(UINib(nibName: "JobCell", bundle: nil), forCellReuseIdentifier: "ReusableCell")

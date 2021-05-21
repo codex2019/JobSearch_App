@@ -18,7 +18,7 @@ struct JobsManager {
     
     var delegate: JobsManagerDelegate?
     
-    func fetchJobs(titleName: String) {
+    func fetchJobs(titleName: String, viewName: String) {
         let newTitle = titleName.replacingOccurrences(of: " ", with: "%20", range: nil)
         let urlString = "\(jobsURL)&description=\(newTitle)"
         performRequest(urlString: urlString)
